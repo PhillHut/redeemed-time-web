@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://redeemedtime.com/">
   <meta property="og:title" content="Redeemed Time — Put Down the Scroll. Pick Up the Word.">
-  <meta property="og:description" content="Less scrolling, more of God's Word, more time together. The full BSB Bible, a gentle pause before distracting apps, and accountability with a trusted friend.">
-  <meta property="og:image" content="https://redeemedtime.com/assets/images/banner.png">
+  <meta property="og:description" content="Less scrolling, more of God's Word, more time together. The whole Bible built in, a gentle pause before distracting apps, and accountability with a trusted friend.">
+  <meta property="og:image" content="https://redeemedtime.com/assets/images/banner.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
@@ -292,6 +292,8 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      /* The screenshots have no status bar, so leave a dark strip for the notch. */
+      padding-top: 30px;
     }
 
     .phone-notch {
@@ -326,15 +328,18 @@
       animation: float 6s ease-in-out infinite;
     }
 
+    /* Labels sit under the phone's bottom edge, over its tab bar, so they never cover the app content. */
     .card-top {
-      top: 8%;
-      right: -25px;
+      bottom: -34px;
+      left: -70px;
+      max-width: 190px;
       animation-delay: 0s;
     }
 
     .card-bottom {
-      bottom: 12%;
-      left: -35px;
+      bottom: -34px;
+      right: -60px;
+      max-width: 180px;
       animation-delay: 3s;
     }
 
@@ -811,6 +816,11 @@
     }
 
     /* Responsive adjustments */
+    @media (max-width: 1240px) {
+      .card-top { left: -24px; }
+      .card-bottom { right: -16px; }
+    }
+
     @media (max-width: 968px) {
       .hero-grid, .feature-row, .feature-row.reverse, .privacy-box {
         grid-template-columns: 1fr;
@@ -859,6 +869,12 @@
       .footer-grid {
         grid-template-columns: 1fr;
       }
+
+      .trust-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -883,7 +899,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="#download" class="btn btn-primary">Join Beta</a>
+        <a href="#download" class="btn btn-primary">Join the Test</a>
       </div>
     </div>
   </header>
@@ -900,13 +916,13 @@
           <span class="gold">Pick Up the Word.</span>
         </h1>
         <p class="lead">
-          Redeemed Time is a Christian app for Android that helps you spend less time scrolling and more time in God&rsquo;s Word and with the people He has placed in your life. A gentle pause before distracting apps, the full Berean Standard Bible built in, and honest accountability with a trusted friend.
+          A Christian app for Android that helps you scroll less and spend more time in God&rsquo;s Word and with the people you love.
         </p>
 
         <div class="hero-cta">
           <a href="#download" class="btn btn-primary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            Join the Android Beta
+            Join the Test (Android)
           </a>
           <a href="#features" class="btn btn-secondary">
             See How It Works
@@ -916,15 +932,15 @@
         <div class="trust-badges">
           <div class="trust-badge-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Full BSB Bible, offline</span>
+            <span>Full Bible built in</span>
           </div>
           <div class="trust-badge-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Protection runs on your phone</span>
+            <span>A gentle pause before distracting apps</span>
           </div>
           <div class="trust-badge-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>No ads, no trackers</span>
+            <span>Accountability with a trusted friend</span>
           </div>
         </div>
       </div>
@@ -940,7 +956,7 @@
 
         <div class="phone-frame">
           <div class="phone-notch"></div>
-          <img src="assets/images/app-today.png" alt="The Today screen: a greeting, a daily encouragement and Ephesians 5:15–17">
+          <img width="720" height="1488" src="assets/images/app-today.webp" alt="The Today screen: a greeting, a daily encouragement and Ephesians 5:15–17">
         </div>
 
         <div class="floating-card card-bottom">
@@ -965,23 +981,23 @@
   <section class="container stats-banner">
     <div class="stat-card">
       <div class="stat-number">10 min</div>
-      <div class="stat-label">To Read Philippians</div>
-      <div class="stat-desc">The whole letter, at an ordinary reading pace (BSB, 225 words a minute)</div>
+      <div class="stat-label">Is All It Takes</div>
+      <div class="stat-desc">to read all of Philippians at an ordinary reading pace</div>
     </div>
     <div class="stat-card">
       <div class="stat-number">66</div>
-      <div class="stat-label">Books, Built In</div>
-      <div class="stat-desc">The complete Berean Standard Bible, 31,102 verses, readable offline</div>
+      <div class="stat-label">Books of the Bible</div>
+      <div class="stat-desc">The whole Bible (Berean Standard Bible) is in the app and works without internet</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">1</div>
-      <div class="stat-label">Trusted Friend</div>
-      <div class="stat-desc">Accountability works best with someone who knows you and prays for you</div>
+      <div class="stat-number">Together</div>
+      <div class="stat-label">Not Alone</div>
+      <div class="stat-desc">Regular check-ins with someone who knows you and prays for you</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">0</div>
-      <div class="stat-label">Browsing Uploaded</div>
-      <div class="stat-desc">Site and search blocking runs on your phone; what you browse stays there</div>
+      <div class="stat-number">Private</div>
+      <div class="stat-label">Nothing Uploaded</div>
+      <div class="stat-desc">What you browse stays on your phone</div>
     </div>
   </section>
 
@@ -997,15 +1013,15 @@
       <!-- Feature 1: The Word -->
       <div class="feature-row" id="word">
         <div class="feature-content">
-          <div class="feature-tag">Read the Word</div>
-          <h3>The Whole Bible, Right in the App</h3>
+          <div class="feature-tag">Bible tab</div>
+          <h3>Read the Word: the Whole Bible, Right in the App</h3>
           <p>
-            Every book of the Berean Standard Bible is built in and works without internet. Pick up where you left off, change the text size, search, or have a chapter read aloud.
+            Every book of the Berean Standard Bible (BSB) is built in and works without internet. Pick up where you left off, change the text size, search, or have a chapter read aloud.
           </p>
           <ul class="feature-checklist">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>All 66 books, offline:</strong> the full BSB, word for word, with no account needed.</span>
+              <span><strong>All 66 books, offline:</strong> no internet or account needed.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1019,7 +1035,7 @@
         </div>
         <div class="feature-mockup">
           <div class="feature-phone">
-            <img src="assets/images/app-bible.png" alt="The built-in Bible reader showing Philippians 4">
+            <img loading="lazy" width="720" height="1488" src="assets/images/app-bible.webp" alt="The built-in Bible reader showing Philippians 4">
           </div>
         </div>
       </div>
@@ -1027,7 +1043,7 @@
       <!-- Feature 2: Perspective -->
       <div class="feature-row reverse">
         <div class="feature-content">
-          <div class="feature-tag">Perspective</div>
+          <div class="feature-tag">Today tab</div>
           <h3>See What Your Scrolling Time Could Become</h3>
           <p>
             The Today page shows how long you spent in video and social apps, and how much of God&rsquo;s Word you could read in that same time. Not to shame you, just to help you choose.
@@ -1035,7 +1051,7 @@
           <ul class="feature-checklist">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Honest numbers:</strong> real BSB word counts at an ordinary reading pace, never more than the time you actually spent.</span>
+              <span><strong>Honest numbers:</strong> based on real Bible reading times, never more than the time you actually spent.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1049,7 +1065,7 @@
         </div>
         <div class="feature-mockup">
           <div class="feature-phone">
-            <img src="assets/images/app-perspective.png" alt="The perspective card: 90 minutes is enough time to read 1 Corinthians and Romans">
+            <img loading="lazy" width="720" height="1488" src="assets/images/app-perspective.webp" alt="The perspective card: 90 minutes is enough time to read 1 Corinthians and Romans">
           </div>
         </div>
       </div>
@@ -1057,7 +1073,7 @@
       <!-- Feature 3: Together -->
       <div class="feature-row" id="together">
         <div class="feature-content">
-          <div class="feature-tag">Better Together</div>
+          <div class="feature-tag">Today tab: check-ins</div>
           <h3>Meet, Be Honest, and Pray for Each Other</h3>
           <p>
             Real change happens in the light, with people who love you. Redeemed Time helps you keep a regular check-in with an accountability partner and come ready to talk.
@@ -1077,13 +1093,13 @@
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Openness, not spying:</strong> once your partner accepts an invite, they get a short email if you turn a protection off, allow a website or pause the app. Nothing else is shared.</span>
+              <span><strong>Openness, not spying:</strong> once your partner accepts an invite, they get a short email for a few set events, for example if you turn a protection off or allow a website. Nothing else is shared.</span>
             </li>
           </ul>
         </div>
         <div class="feature-mockup">
           <div class="feature-phone">
-            <img src="assets/images/app-checkin.png" alt="The accountability check-in card with James 5:16 and Schedule, Notes and Guide buttons">
+            <img loading="lazy" width="720" height="1488" src="assets/images/app-checkin.webp" alt="The accountability check-in card with James 5:16 and Schedule, Notes and Guide buttons">
           </div>
         </div>
       </div>
@@ -1091,8 +1107,8 @@
       <!-- Feature 4: Swap pause -->
       <div class="feature-row reverse">
         <div class="feature-content">
-          <div class="feature-tag">A Pause Before the Scroll</div>
-          <h3>A Moment to Choose Before Distracting Apps Open</h3>
+          <div class="feature-tag">Swap tab</div>
+          <h3>A Pause Before Distracting Apps Open</h3>
           <p>
             Choose the apps that pull you in. When you open one, Redeemed Time shows a short pause with a verse, so you can choose: open the Word, pray, or continue on purpose.
           </p>
@@ -1103,17 +1119,17 @@
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Prayer pause:</strong> an optional short guided prayer before the app opens.</span>
+              <span><strong>Prayer pause</strong> (called &ldquo;Strict Sanctification&rdquo; in the app for now): an optional short guided prayer before the app opens.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Long-scroll reminder:</strong> a gentle check-in after a stretch of time in one app. You pick how long.</span>
+              <span><strong>Long-scroll reminder</strong> (&ldquo;Anti-Doomscroll Reminder&rdquo; in the app for now): a gentle check-in after a stretch of time in one app. You pick how long.</span>
             </li>
           </ul>
         </div>
         <div class="feature-mockup">
           <div class="feature-phone">
-            <img src="assets/images/app-swap.png" alt="The Swap page: choose apps and how the pause works">
+            <img loading="lazy" width="720" height="1488" src="assets/images/app-swap.webp" alt="The Swap page: choose apps and how the pause works">
           </div>
         </div>
       </div>
@@ -1121,19 +1137,19 @@
       <!-- Feature 5: Shield -->
       <div class="feature-row">
         <div class="feature-content">
-          <div class="feature-tag">Guard Your Eyes</div>
-          <h3>Adult Site Blocking and a FLEE Button for Hard Moments</h3>
+          <div class="feature-tag">Shield tab</div>
+          <h3>Guard Your Eyes: Adult Site Blocking and a FLEE Button</h3>
           <p>
             Redeemed Time checks the sites and searches you open in supported browsers, right on your phone, and covers explicit pages with a calm pause screen. When temptation hits, the FLEE button is one tap away on every screen.
           </p>
           <ul class="feature-checklist">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Adult Site Blocker:</strong> well-known adult sites, every .xxx, .porn, .adult and .sex address, and any site you add, in Chrome, Samsung Internet, Firefox, Edge, Brave, Opera and DuckDuckGo.</span>
+              <span><strong>Adult Site Blocker:</strong> blocks well-known adult sites, adult-only web addresses (like .xxx), and any site you add, in Chrome, Samsung Internet, Firefox, Edge, Brave, Opera and DuckDuckGo.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>FLEE:</strong> Scripture, a calming breathing prayer, and one tap to text or call your partner.</span>
+              <span><strong>FLEE button</strong> (for moments of temptation): Scripture, a calming breathing prayer, and one tap to text or call your partner.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1143,7 +1159,7 @@
         </div>
         <div class="feature-mockup">
           <div class="feature-phone">
-            <img src="assets/images/app-shield.png" alt="The Shield page with the FLEE button and the Adult Site Blocker">
+            <img loading="lazy" width="720" height="1488" src="assets/images/app-shield.webp" alt="The Shield page with the FLEE button and the Adult Site Blocker">
           </div>
         </div>
       </div>
@@ -1151,15 +1167,15 @@
       <!-- Feature 6: Sanctuary -->
       <div class="feature-row reverse">
         <div class="feature-content">
-          <div class="feature-tag">Sanctuary</div>
+          <div class="feature-tag">Sanctuary tab</div>
           <h3>A Daily Verse and a Quiet Place to Pray</h3>
           <p>
-            Start the day with Scripture on your lock screen, keep the verses that carry you, and pray through short guided prayers when you need to reset.
+            Get a verse each day as a notification, keep the verses that carry you, and pray through short guided prayers when you need to reset.
           </p>
           <ul class="feature-checklist">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Daily verse:</strong> a verse or quote at the time you choose.</span>
+              <span><strong>Daily verse:</strong> a notification with a verse or quote at the time you choose.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1173,7 +1189,7 @@
         </div>
         <div class="feature-mockup">
           <div class="feature-phone">
-            <img src="assets/images/app-sanctuary.png" alt="The Sanctuary page with today's verse, Matthew 6:33">
+            <img loading="lazy" width="720" height="1488" src="assets/images/app-sanctuary.webp" alt="The Sanctuary page with today's verse, Matthew 6:33">
           </div>
         </div>
       </div>
@@ -1186,39 +1202,7 @@
       <div class="section-header">
         <span class="section-badge">Everyday Life</span>
         <h2>Time Back for God and for People</h2>
-        <p>Small, steady changes: a verse before the feed, a pause before the scroll, an honest conversation each week.</p>
-      </div>
-
-      <div class="lifestyle-grid">
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          </div>
-          <h3>1. Mornings in the Word</h3>
-          <p>
-            Begin in the Word before the world. A daily verse greets you, and the pause before your feeds offers Scripture first.
-          </p>
-        </div>
-
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>2. Fewer Reflex Scrolls</h3>
-          <p>
-            When stress sends your thumb to an app, a short pause gives you a moment to pray, breathe, and choose what to do with the next few minutes.
-          </p>
-        </div>
-
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <h3>3. Present With Your People</h3>
-          <p>
-            Put the phone down at dinner, read a chapter together, and keep a regular check-in with a friend who prays for you.
-          </p>
-        </div>
+        <p>A verse before the feed, a pause before the scroll, and an honest conversation each week.</p>
       </div>
 
       <!-- Privacy Card -->
@@ -1226,7 +1210,7 @@
         <div>
           <h3>🛡️ Private by Design</h3>
           <p>
-            Redeemed Time doesn&rsquo;t send screenshots or your browsing to anyone. <strong>Site blocking, app pauses and your notes all work on your phone.</strong> The only thing that leaves it is a short email to partners who accepted your invite, for the events listed in our privacy policy.
+            Redeemed Time doesn&rsquo;t send screenshots or your browsing to anyone. <strong>Site blocking, app pauses and your notes all work on your phone.</strong> The only thing that leaves it is a short email to partners who accepted your invite, for a few set events listed in our privacy policy.
           </p>
           <a href="privacy.html" class="btn btn-secondary">Read Our Full Privacy Policy &rarr;</a>
         </div>
@@ -1288,7 +1272,7 @@
             <span class="faq-icon">▼</span>
           </div>
           <div class="faq-answer">
-            No. The site blocker checks web addresses and searches on your phone, using Android&rsquo;s Accessibility feature, and nothing you browse is sent anywhere. There are no ads or analytics.
+            No. The site blocker checks web addresses and searches on your phone, and nothing you browse is sent anywhere. It uses Android&rsquo;s Accessibility setting, which lets the app see which app or website is on your screen. There are no ads or analytics.
           </div>
         </div>
 
@@ -1308,7 +1292,17 @@
             <span class="faq-icon">▼</span>
           </div>
           <div class="faq-answer">
-            Android phones, through a Google Play closed beta right now. The site blocker works in Chrome, Samsung Internet, Firefox, Edge, Brave, Opera and DuckDuckGo.
+            Android phones, as a test version on Google Play for now. The site blocker works in Chrome, Samsung Internet, Firefox, Edge, Brave, Opera and DuckDuckGo.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is there an iPhone version?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Not yet. We&rsquo;re starting with Android. If you&rsquo;d like to hear when an iPhone version is ready, email support@redeemedtime.com.
           </div>
         </div>
 
@@ -1331,23 +1325,26 @@
       <div class="cta-card">
         <h2>Start Redeeming Your Time</h2>
         <p>
-          Spend more of your days in God&rsquo;s Word and with the people He&rsquo;s given you. We&rsquo;re welcoming early testers to our Google Play closed beta for Android.
+          Spend more of your days in God&rsquo;s Word and with the people He&rsquo;s given you. We&rsquo;re welcoming early testers for the Android test version on Google Play.
         </p>
 
         <div class="platform-buttons">
           <a href="https://groups.google.com/g/redeemed-time-testers" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-            Join the Testing Group (Android Beta)
+            Step 1: Join the Testing Group
+          </a>
+          <a href="https://play.google.com/apps/testing/com.aistudio.redeemedtime.wkvnjp" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Step 2: Get the Test on Google Play
           </a>
         </div>
         <p style="font-size: 13px; color: #94a3b8; margin-top: 14px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.5;">
           <strong>How to join in 2 steps:</strong><br>
-          1. Tap the button above and join our Google Group (<b>redeemed-time-testers</b>).<br>
-          2. Open the Google Play closed beta link to download and install.
+          1. Join our Google Group (<b>redeemed-time-testers</b>) with the Google account you use on your phone.<br>
+          2. Tap &ldquo;Get the Test on Google Play&rdquo;, choose &ldquo;Become a tester&rdquo;, then install Redeemed Time from Google Play.
         </p>
 
         <div style="margin-top: 24px; max-width: 820px; margin-left: auto; margin-right: auto;">
-          <img src="assets/images/google_group_join_guide.png" alt="Google Groups join guide: what to look for" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <img loading="lazy" src="assets/images/google_group_join_guide.png" alt="Google Groups join guide: what to look for" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
       </div>
     </div>
@@ -1382,8 +1379,8 @@
           <ul>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="privacy.html#accessibility">Accessibility Use</a></li>
-            <li><a href="mailto:support@redeemedtime.com">Data Inquiries</a></li>
+            <li><a href="privacy.html#accessibility">How We Use Accessibility</a></li>
+            <li><a href="mailto:support@redeemedtime.com">Questions or Delete My Data</a></li>
           </ul>
         </div>
 
@@ -1391,7 +1388,7 @@
           <h4>Connect</h4>
           <ul>
             <li><a href="mailto:support@redeemedtime.com">support@redeemedtime.com</a></li>
-            <li><a href="https://groups.google.com/g/redeemed-time-testers" target="_blank" rel="noopener noreferrer">Beta Testing Community</a></li>
+            <li><a href="https://groups.google.com/g/redeemed-time-testers" target="_blank" rel="noopener noreferrer">Testing Group</a></li>
           </ul>
         </div>
       </div>
@@ -1401,7 +1398,7 @@
           &copy; 2026 Redeemed Time. Scripture quotations are from the Berean Standard Bible (BSB), public domain.
         </div>
         <div>
-          Served over HTTPS &bull; Local-first by design
+          Made with care for the church
         </div>
       </div>
     </div>
