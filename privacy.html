@@ -65,13 +65,14 @@
     <h2>2. Sensitive Permissions & Specific Declarations</h2>
     <p>To provide intentional friction against distractions and protect your spiritual integrity, Redeemed Time utilizes specific Android system permissions:</p>
 
-    <h3>A. Accessibility Service (BIND_ACCESSIBILITY_SERVICE)</h3>
+    <h3 id="accessibility">A. Accessibility Service (BIND_ACCESSIBILITY_SERVICE)</h3>
     <p><strong>Purpose & Justification:</strong> Redeemed Time uses the Android Accessibility Service API solely to provide its core digital wellbeing and distraction-blocking features ("The Swap Interceptor" and "Purity Shield"):</p>
     <ul>
         <li>It inspects the foreground package name to detect when a user-selected distraction app (e.g., social media or video streaming) is launched, prompting the user with a sacred pause, prayer, or Berean Standard Bible Scripture before the app unlocks.</li>
         <li>It inspects browser address bars locally in real-time solely to detect explicit adult domain URLs or lust-triggering search phrases, immediately displaying the emergency "Flee Temptation" shield.</li>
+        <li>It recognizes when Redeemed Time&rsquo;s own App Info page, its Accessibility switch, or an uninstall prompt for Redeemed Time is on screen, so it can show a pause before the app is stopped or removed (Tamper Protection).</li>
     </ul>
-    <p><strong>Privacy Guarantee:</strong> The Accessibility Service does <em>not</em> log keystrokes, does <em>not</em> read personal text messages, does <em>not</em> capture screen recordings, and does <em>not</em> transmit any browsing or app data to external servers or third parties.</p>
+    <p><strong>Privacy Guarantee:</strong> The Accessibility Service does <em>not</em> log keystrokes, does <em>not</em> read personal text messages, does <em>not</em> capture screen recordings, and does <em>not</em> transmit any browsing or app data to external servers or third parties. The one exception is a choice you make: if you allow a website, its name is emailed to your accepted partners (see section E).</p>
 
     <h3>B. Usage Access (PACKAGE_USAGE_STATS)</h3>
     <p>Used strictly on-device to query how many minutes were spent on video and social media apps, in order to display the perspective shift (how much of the Bible could have been read in that same time). This information never leaves your phone.</p>
