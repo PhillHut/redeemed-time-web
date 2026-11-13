@@ -45,7 +45,7 @@
     <div class="header">
         <a href="index.html" style="display:inline-block; margin-bottom:12px; color:#d4af37; font-weight:600; text-decoration:none;">&larr; Back to Redeemed Time Home</a>
         <h1>Privacy Policy for Redeemed Time</h1>
-        <p><strong>Effective Date:</strong> November 8, 2026 &bull; <span class="badge">Version 2.0</span></p>
+        <p><strong>Effective Date:</strong> November 13, 2026 &bull; <span class="badge">Version 2.1</span></p>
     </div>
 
     <p>Thank you for using <strong>Redeemed Time</strong> ("the App", "we", "our", or "us"). We are committed to protecting your privacy and treating your attention, data, and spiritual journey with the highest level of respect and integrity. This Privacy Policy outlines how our app handles device data, permissions, and user information.</p>
@@ -58,7 +58,7 @@
     <p>Redeemed Time processes minimal data locally on your device to deliver our spiritual stewardship and focus features:</p>
     <ul>
         <li><strong>On-Device App Usage Statistics:</strong> With your permission, the App reads daily foreground usage time from your device's usage stats system to calculate your time perspective (e.g., equivalent Bible books read). This data is processed strictly locally on your device.</li>
-        <li><strong>Accountability Partner Information:</strong> Names, email addresses, and phone numbers that you manually enter for accountability purposes are saved in your device's local database. Partner email addresses are used solely to deliver real-time emergency notifications triggered by user activity.</li>
+        <li><strong>Accountability Partner Information:</strong> Names, email addresses, and phone numbers that you manually enter for accountability purposes are saved in your device's local database. If you invite a partner to receive alerts, their email address, your first name and a random ID for your install are also stored by our alert service (see section E), only so it can send them alerts. Nothing else is stored there.</li>
         <li><strong>Custom Scriptures and Prayers:</strong> Any personal scriptures, reflections, or custom prayers you save are stored locally within the app's secure database.</li>
     </ul>
 
@@ -83,16 +83,16 @@
     <p>Enables you to browse and select installed apps on your device that you wish to add to your personal Intercepted Apps list.</p>
 
     <h3>E. Automated Email Notification System</h3>
-    <p>When you designate an accountability partner, Redeemed Time transmits real-time emergency notifications (such as Panic Shield activations, adult content blocks, or tamper alerts) to your partner. These alerts are dispatched via trusted third-party email delivery services over secure HTTPS connections. Partner email addresses and notification payloads are transmitted strictly to execute the emergency alert requested by the user and are never sold, rented, or used for advertising.</p>
+    <p>When you invite an accountability partner, our alert service (hosted on Amazon Web Services) emails them an invitation. Alerts go only to partners who accept, and only for these events: you open settings to pause the app, you turn a protection off, you allow a website (the site name is included), you remove a blocked word or site (the word or site itself is not included), you ask for extra time, you erase the app&rsquo;s data, or you remove that partner. The app sends only a random install ID, the event and those details, over HTTPS. It never sends your browsing, searches or app usage. Partners can stop alerts with the link in every email. Partner email addresses are never sold, rented, or used for advertising.</p>
 
     <h3>F. Manual Messaging Intent</h3>
     <p>When you choose to manually contact a partner, the App initiates an Intent (`ACTION_SENDTO`) directing your phone's default messaging application to compose a pre-formatted message. Messages are never sent without your direct action.</p>
 
     <h2>3. Third-Party Services and Analytics</h2>
-    <p>The App may utilize Google Play Services and Firebase for diagnostic crash reports and basic app performance monitoring. These services collect pseudonymous diagnostic data in accordance with Google's Privacy Policy. Automated email notifications are routed through secure, industry-standard third-party email delivery infrastructure solely to deliver alerts.</p>
+    <p>The App does not use advertising, analytics or crash-reporting services. Partner alert emails are sent through our alert service on Amazon Web Services (Amazon SES), solely to deliver the alerts described above.</p>
 
     <h2>4. Data Retention and Security</h2>
-    <p>All user preferences, custom prayers, accountability partner contacts, and logs are stored locally on your device using encrypted Android room databases. If you uninstall the app or clear app data in Android Settings, all stored data is permanently deleted from the device.</p>
+    <p>All user preferences, custom prayers, accountability partner contacts, and logs are stored locally in the App&rsquo;s private storage on your device, which Android encrypts when your phone uses a screen lock. If you uninstall the app or clear app data in Android Settings, all stored data is permanently deleted from the device.</p>
 
     <h2>5. Children's Privacy</h2>
     <p>Redeemed Time is designed for general audiences and individuals seeking spiritual discipline (recommended for users aged 13 and above, or 18+ for adult purity filtering). We do not knowingly collect personal data from children under 13.</p>
