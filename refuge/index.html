@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  Redeemed Time refuge page. Created Nov 16, 2026 at 1:05 PM CST (Shield & FLEE redesign, session 2).
+  When the app's shield catches an adult site, it replaces that browser tab with this page.
+
+  A quiet landing page only: no buttons, no links, no forms, no outside fonts, images, scripts or
+  trackers. The Content-Security-Policy below blocks every outside request. All real actions (Bible,
+  partner, prayer) happen in the app. Unlisted: not linked from the website, and hidden from search
+  engines (noindex).
+
+  Every verse is word for word from the Berean Standard Bible bundled in the app
+  (Android/app/src/main/assets/bsb_bible.db), brackets removed as the app's reader does. Psalm 101:3
+  quotes its first sentence. Encouragement lines are our own words. Verses rotate on each visit.
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0F131D">
+<link rel="icon" href="data:,">
+<title>A quiet place</title>
+<style>
+  :root { --bg:#0F131D; --text:#F1F4F8; --muted:#9EABB9; --soft:#7F8CA0; --gold:#D4AF37; --gold-l:#E8C868; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:var(--bg); color:var(--text); }
+  body { font-family:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height:1.65; -webkit-text-size-adjust:100%; }
+  main { max-width:560px; margin:0 auto; padding:44px 24px 56px; }
+  h1 { font-family:Georgia, "Times New Roman", serif; font-weight:400; letter-spacing:.06em; text-transform:uppercase;
+       font-size:1.6rem; text-align:center; color:#fff; }
+  .lead { color:var(--muted); text-align:center; margin-top:12px; }
+  .breath { width:96px; height:96px; margin:28px auto 4px; border-radius:50%; border:1.5px solid rgba(212,175,55,.55);
+            background:radial-gradient(circle, rgba(212,175,55,.22), rgba(212,175,55,.04) 65%, transparent 72%);
+            animation:breathe 10s ease-in-out infinite; }
+  .breath-label { text-align:center; color:var(--gold-l); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+  @keyframes breathe { 0%, 100% { transform:scale(.82); opacity:.75; } 50% { transform:scale(1.08); opacity:1; } }
+  @media (prefers-reduced-motion: reduce) { .breath { animation:none; } }
+  blockquote { margin-top:30px; border-left:3px solid var(--gold); padding:2px 0 2px 16px; }
+  blockquote p { font-size:1.06rem; }
+  cite { display:block; margin-top:6px; color:var(--gold-l); font-style:normal; font-size:.88rem; }
+  .line { margin-top:26px; color:#CFD6DF; font-style:italic; text-align:center; }
+  .divider { width:44px; height:2px; background:rgba(212,175,55,.5); margin:34px auto 0; border-radius:2px; }
+  .quiet { margin-top:26px; color:var(--soft); font-size:.85rem; text-align:center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>A quiet place</h1>
+  <p class="lead">The page you were opening isn't here. This one is. Stay as long as you like. There's no hurry.</p>
+
+  <div class="breath" aria-hidden="true"></div>
+  <p class="breath-label" id="breath-label">Breathe in slowly</p>
+
+  <blockquote id="v1"><p>I have made a covenant with my eyes. How then could I gaze with desire at a virgin?</p><cite>Job 31:1 (BSB)</cite></blockquote>
+  <p class="line" id="l1">What you were about to see would have taken something from you, and given nothing back. You were made for more than this.</p>
+  <blockquote id="v2"><p>The LORD is near to the brokenhearted; He saves the contrite in spirit.</p><cite>Psalm 34:18 (BSB)</cite></blockquote>
+  <p class="line" id="l2">Shame says hide. Grace says come home. God isn't waiting to scold you. He's waiting to wash you clean.</p>
+  <blockquote id="v3"><p>Therefore, there is now no condemnation for those who are in Christ Jesus.</p><cite>Romans 8:1 (BSB)</cite></blockquote>
+  <p class="line" id="l3">Every time you turn away, it gets a little easier. This is one of those times.</p>
+
+  <div class="divider"></div>
+  <p class="quiet">Redeemed Time is open on your phone if you want to read, pray or reach out.<br>
+  This page loads nothing else: no ads, no tracking, no accounts. Close this tab whenever you're ready.</p>
+</main>
+<script>
+  // Rotate the verses and lines on each visit. Everything is in this file; nothing is fetched.
+  (function () {
+    var conviction = [
+      ["I have made a covenant with my eyes. How then could I gaze with desire at a virgin?", "Job 31:1"],
+      ["I will set no worthless thing before my eyes.", "Psalm 101:3"],
+      ["Do you not know that your body is a temple of the Holy Spirit who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore glorify God with your body.", "1 Corinthians 6:19–20"],
+      ["Guard your heart with all diligence, for from it flow springs of life.", "Proverbs 4:23"],
+      ["No temptation has seized you except what is common to man. And God is faithful; He will not let you be tempted beyond what you can bear. But when you are tempted, He will also provide an escape, so that you can stand up under it.", "1 Corinthians 10:13"]
+    ];
+    var comfort = [
+      ["The LORD is near to the brokenhearted; He saves the contrite in spirit.", "Psalm 34:18"],
+      ["Create in me a clean heart, O God, and renew a right spirit within me.", "Psalm 51:10"],
+      ["“Come now, let us reason together,” says the LORD. “Though your sins are like scarlet, they will be as white as snow; though they are as red as crimson, they will become like wool.", "Isaiah 1:18"]
+    ];
+    var grace = [
+      ["Therefore, there is now no condemnation for those who are in Christ Jesus.", "Romans 8:1"],
+      ["Let us fix our eyes on Jesus, the pioneer and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God.", "Hebrews 12:2"]
+    ];
+    var lines1 = [
+      "What you were about to see would have taken something from you, and given nothing back. You were made for more than this.",
+      "That screen promised rest and would have left you emptier. Real rest is found somewhere else.",
+      "The pull you feel is real, and so is the way out. You're already on it."
+    ];
+    var lines2 = [
+      "Shame says hide. Grace says come home. God isn't waiting to scold you. He's waiting to wash you clean.",
+      "You don't have to clean yourself up before you come to Him. Come as you are.",
+      "Whatever happened before this moment, this moment can be different."
+    ];
+    var lines3 = [
+      "Every time you turn away, it gets a little easier. This is one of those times.",
+      "One choice at a time. This one counts.",
+      "You are not alone in this fight. Someone who loves you would be glad to hear from you."
+    ];
+    function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+    function setVerse(id, v) {
+      var el = document.getElementById(id);
+      el.firstChild.textContent = v[0];
+      el.lastChild.textContent = v[1] + " (BSB)";
+    }
+    setVerse("v1", pick(conviction));
+    setVerse("v2", pick(comfort));
+    setVerse("v3", pick(grace));
+    document.getElementById("l1").textContent = pick(lines1);
+    document.getElementById("l2").textContent = pick(lines2);
+    document.getElementById("l3").textContent = pick(lines3);
+    // Gentle breathing cue, in step with the circle (5 s in, 5 s out).
+    var label = document.getElementById("breath-label"), inhale = true;
+    setInterval(function () { inhale = !inhale; label.textContent = inhale ? "Breathe in slowly" : "Breathe out slowly"; }, 5000);
+  })();
+</script>
+</body>
+</html>
