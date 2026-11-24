@@ -318,6 +318,48 @@
       height: 100%;
       object-fit: cover;
       object-position: top;
+      transition: opacity 0.25s ease;
+    }
+
+    /* Hero Theme Toggle */
+    .hero-theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: 4px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .theme-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+
+    .theme-pill:hover {
+      color: var(--text-main);
+    }
+
+    .theme-pill.active {
+      background: var(--accent-gold-glow);
+      border-color: var(--border-glow);
+      color: var(--accent-gold-light);
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
     }
 
     /* Floating Stat Card */
@@ -948,6 +990,10 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             <span>Accountability with a trusted friend</span>
           </div>
+          <div class="trust-badge-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Dual Calm Tech Themes (Dark &amp; Light)</span>
+          </div>
         </div>
       </div>
 
@@ -960,9 +1006,20 @@
           <p>90 min of scrolling is enough time to read Romans and 1 Corinthians</p>
         </div>
 
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <img width="720" height="1488" src="assets/images/app-today.webp" alt="The Today screen: a greeting, a daily encouragement and Ephesians 5:15–17">
+        <div style="display: flex; flex-direction: column; align-items: center; z-index: 1;">
+          <div class="hero-theme-toggle" role="tablist" aria-label="Select app theme preview">
+            <button type="button" class="theme-pill active" id="theme-btn-dark" onclick="setHeroTheme('dark')">
+              🌙 Obsidian Dark
+            </button>
+            <button type="button" class="theme-pill" id="theme-btn-light" onclick="setHeroTheme('light')">
+              ☀️ Warm Parchment
+            </button>
+          </div>
+
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <img id="hero-mockup-img" width="720" height="1532" src="assets/images/app-today.webp" alt="The Today screen: a greeting, a daily encouragement and Ephesians 5:15–17">
+          </div>
         </div>
 
         <div class="floating-card card-bottom">
@@ -1027,6 +1084,10 @@
           <ul class="feature-checklist">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              <span><strong>Calm Tech Light &amp; Dark:</strong> seamlessly switch between Obsidian Dark for peaceful evening wind-downs and Warm Parchment Light for glare-free daytime reading that looks and feels like a physical paper Bible.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
               <span><strong>Honest numbers:</strong> based on real Bible reading times, never more than the time you actually spent.</span>
             </li>
             <li>
@@ -1057,11 +1118,15 @@
           <ul class="feature-checklist">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Check-in schedule:</strong> weekly, every other week or monthly, added to your calendar so you both remember.</span>
+              <span><strong>Check-in schedule &amp; calendar:</strong> weekly, every other week or monthly, exported directly to your device calendar so you both remember.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Private prep notes:</strong> jot down victories, HALT moments (hungry, angry, lonely, tired) and prayer needs. They stay on your phone.</span>
+              <span><strong>72-Hour Grace Window:</strong> if your meeting is delayed, active prep notes stay accessible with a 72-hour grace window to mark <em>✓ Yes, We Met</em> or reschedule (+3 days) before archiving.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              <span><strong>1-on-1 &amp; Small Groups:</strong> organize private prep notes (victories, HALT moments, prayer requests) for individual partners or small group accountability fellowships.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1069,7 +1134,7 @@
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>Openness, not spying:</strong> once your partner accepts an invite, they get a short email for a few set events, for example if you turn a protection off or allow a website. Nothing else is shared.</span>
+              <span><strong>Openness, not spying:</strong> once your partner accepts an invite, they get a short email for a few set events, for example if you turn a protection off or allow a website. FLEE never emails partners.</span>
             </li>
           </ul>
         </div>
@@ -1100,6 +1165,10 @@
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
               <span><strong>Curated &amp; Custom Plans:</strong> follow 5 popular reading plans or build your own with quiet time reminders and daily pacing.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              <span><strong>Screen Awake (Aa toggle):</strong> keep your screen awake while reading through quiet times without mid-chapter lockouts.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1159,7 +1228,7 @@
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span><strong>FLEE button</strong> (for moments of temptation): Scripture, a calming breathing prayer, and one tap to text or call your partner. Tapping FLEE never sends an alert email.</span>
+              <span><strong>FLEE Rescue &amp; Immediate Exit:</strong> in moments of temptation, one tap brings up Scripture anchors (Job 31:1, Psalm 119:11), a calming breathing prayer, and direct reach-out. Voluntary check-ins include an immediate top-right <em>✕ Exit</em>. FLEE adapts cleanly to light and dark themes and never emails partners.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -1325,6 +1394,26 @@
             Yes. You choose which apps get the pause, and you can add your own blocked words and sites. You can also allow (whitelist) trusted websites you visit often—like Bible sites, news, or work tools—so the blocker stops scanning page words on those sites and avoids false alarms. Known adult sites can never be allowed, and if you have a partner, they&rsquo;re emailed the name of any site you trust.
           </div>
         </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Does Redeemed Time support both Light and Dark themes?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Redeemed Time includes two custom-crafted Calm Tech themes: <strong>Obsidian Dark</strong> (ideal for evening devotions, low light, and battery savings) and <strong>Warm Parchment Light</strong> (designed with soft, glare-free paper tones reminiscent of a physical Bible, avoiding harsh blue/white glare). The app automatically adapts to your Android system setting or can be manually selected in Settings.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do check-in notes and the 72-hour grace window work?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Check-in notes help you arrive at your 1-on-1 or small group accountability meetings prepared, with space to log victories, HALT moments, and prayer requests. They stay 100% on your phone. If your scheduled meeting time passes, the app provides a generous 72-hour grace window to review your notes, celebrate victories, and mark <em>✓ Yes, We Met</em> or reschedule (+3 days) before notes are archived to your local on-device history.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1422,7 +1511,7 @@
     </div>
   </footer>
 
-  <!-- Script for FAQ Interactive Accordion -->
+  <!-- Script for FAQ Interactive Accordion & Hero Theme Switcher -->
   <script>
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
@@ -1430,6 +1519,24 @@
         item.classList.toggle('active');
       });
     });
+
+    function setHeroTheme(theme) {
+      const img = document.getElementById('hero-mockup-img');
+      const darkBtn = document.getElementById('theme-btn-dark');
+      const lightBtn = document.getElementById('theme-btn-light');
+      if (!img) return;
+      if (theme === 'light') {
+        img.src = 'assets/images/app-today-light.webp';
+        img.alt = 'The Today screen in Warm Parchment Light theme: daytime reading with gentle, glare-free paper tones';
+        if (darkBtn) darkBtn.classList.remove('active');
+        if (lightBtn) lightBtn.classList.add('active');
+      } else {
+        img.src = 'assets/images/app-today.webp';
+        img.alt = 'The Today screen in Obsidian Dark theme: nighttime wind-down with OLED-friendly contrast';
+        if (lightBtn) lightBtn.classList.remove('active');
+        if (darkBtn) darkBtn.classList.add('active');
+      }
+    }
   </script>
 
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ee308a269ea49819290a1e232ee87f7"}'></script><!-- End Cloudflare Web Analytics -->
